@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linux</title>
+</head>
+<body>
+<h1 align="center">虚拟机信息主页</h1>
+<a href="/myweb/openAdd">1、添加虚拟机信息</a><br>
+<a href="/myweb/daochu">2、导出数据到本地</a>
+{#<a href="download.html">2、下载文件</a>#}
+<table border="1px" width="100%" style="border-collapse: collapse;">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>虚拟机ip地址</th>
+        <th>虚拟机名称</th>
+        <th>CPU</th>
+        <th>注释</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in ls %}
+        <tr>
+        <td align="center">{{ forloop.counter }}</td>
+        <td align="center">{{ x.linux_ip }}</td>
+        <td align="center">{{ x.linux_name }}</td>
+        <td align="center">{{ x.linux_cpu }}</td>
+        <td align="center">{{ x.linux_notes }}</td>
+        <td align="center">
+            <a href="/myweb/deleteLinux?id={{ x.id }}">删除</a>
+            |
+            <a href="/myweb/openEdit?id={{ x.id }}">修改</a>
+        </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下载页面</title>
+</head>
+<body>
+{#    <a href="{% url '/myweb/download' %}" rel="external nofollow">导出成功，点此下载</a>#}
+    <a href="/myweb/download" rel="external nofollow">导出成功，点此下载</a>
+{#    <h3>或点击确认键返回主页</h3>#}
+{#    <span style="font-size:24px;"><meta http-equiv="refresh" content="3;URL=/myweb/"></span>#}
+    <button type="submit" onclick="location.href='/myweb/'">点此返回主页</button>
+</body>
+</html>

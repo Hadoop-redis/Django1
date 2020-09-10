@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">添加虚拟机信息</h1>
+<form action="/myweb/saveLinux" method="GET">
+    {% csrf_token %}
+    ip地址：<input name="linux_ip"><br>
+    虚拟机名称：<input name="linux_name"><br>
+    CPU：<input name="linux_cpu"><br>
+    注释：<input name="linux_notes"><br>
+    <input type="submit" value="添加">
+</form>
+</body>
+</html>

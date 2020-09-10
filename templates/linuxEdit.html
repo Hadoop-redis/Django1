@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #110f0f;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">修改虚拟机信息</h1>
+<form action="/myweb/updateLinux" method="GET">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ m.id }}">
+    ip地址：<input name="linux_ip" value="{{ m.linux_ip }}"><br>
+    虚拟机名称：<input name="linux_name" value="{{ m.linux_name }}"><br>
+    CPU：<input name="linux_cpu" value="{{ m.linux_cpu }}"><br>
+    注释：<input name="linux_notes" value="{{ m.linux_notes }}"><br>
+    <input type="submit" value="修改">
+</form>
+</body>
+</html>
